@@ -1,0 +1,29 @@
+.main_container {
+  text-align: center;
+}
+
+.board {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  margin: 10px auto;
+  border-bottom: none;
+  border-right: none;
+}
+
+.row {
+  display: flex;
+  flex: 33.3%;
+  border-bottom: 1px solid black;
+}
+
+.column {
+  flex: 33.3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-right: 1px solid black;
+}
