@@ -60,9 +60,9 @@ function AutoCompleteTypeHead() {
 
   const handleKeyUp = (event) => {
     const keyCode = event.keyCode;
-    setTimeout(() => {
-      setChange();
-    }, [100]);
+    // setTimeout(() => {
+    setChange();
+    // }, [100]);
 
     if (keyCode === 13) {
       // enter
@@ -74,7 +74,7 @@ function AutoCompleteTypeHead() {
 
     if (keyCode === 40) {
       // key move down
-      if (activeIndex == null || activeIndex == data.length - 1) {
+      if (activeIndex === null || activeIndex === data.length - 1) {
         setActiveIndex(0);
         return;
       }
@@ -110,11 +110,11 @@ function AutoCompleteTypeHead() {
         />
 
         {show && (
-          <ul ref={selectRef} className="hello">
+          <ul ref={selectRef}>
             {data.map((item, index) => {
               return (
                 <li
-                  className={index == activeIndex && "active"}
+                  className={index === activeIndex && "active"}
                   onClick={() => handleClick(item.title)}
                 >
                   {item.title}
