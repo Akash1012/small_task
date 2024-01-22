@@ -1,0 +1,43 @@
+.main {
+  text-align: center;
+}
+
+.modal-backdrop {
+  /* position: fixed; */
+  width: 100vh;
+  height: 100vh;
+  background-color: beige;
+}
+
+.modal-content {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: purple;
+}
+
+.modal-header {
+  height: 10%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-body {
+  height: 80%;
+}
+
+.modal-footer {
+  height: 10%;
+  display: flex;
+  justify-self: flex-end;
+}
+
+.modal-footer button {
+  margin-left: 2px;
+}
+
+.close-icon,
+button {
+  cursor: pointer;
+}
