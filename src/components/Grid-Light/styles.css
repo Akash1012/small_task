@@ -14,10 +14,8 @@ code {
 
 .wrapper {
   display: flex;
-  align-items: center;
   justify-content: center;
-  flex-direction: column;
-  gap: 16px;
+  margin-top: 20px;
 }
 
 .grid {
@@ -31,8 +29,6 @@ code {
 
 .cell {
   background-color: transparent;
-  border: 1px solod #000;
-  height: 0;
   padding-bottom: 100%;
 }
 

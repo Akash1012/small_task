@@ -5,6 +5,8 @@ const TicTacToe = () => {
   const [data, setData] = useState(Array(9).fill(null));
   const nextPlayer = data.filter(Boolean).length % 2 === 0 ? "X" : "O";
 
+  console.log(nextPlayer);
+
   const squareSelected = (selectedItem) => {
     const temp = [...data];
     temp[selectedItem] = nextPlayer;
@@ -64,7 +66,12 @@ const TicTacToe = () => {
     <div className="main_container">
       <div>{status()}</div>
       <div className="board">
-        <div className="row">
+        <div
+          className="row"
+          style={{
+            background: "red",
+          }}
+        >
           {squareData(0)}
           {squareData(1)}
           {squareData(2)}

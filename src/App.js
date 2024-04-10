@@ -3,6 +3,8 @@ import Accordion from "./components/Accordion";
 import AutoCompleteTypeHead from "./components/Autocomplete-typehead";
 import CustomModal from "./components/Custom-modal";
 import TicTacToe from "./components/Tic Tac Toe";
+import GridLight from "./components/Grid-Light";
+import InfiniteScroll from "./components/InfiniteScroll";
 
 function App() {
   return (
@@ -10,8 +12,10 @@ function App() {
       <div>
         {/* <TicTacToe /> */}
         {/* <Accordion /> */}
-        <AutoCompleteTypeHead />
+        {/* <AutoCompleteTypeHead /> */}
+        {/* <GridLight /> */}
         {/* <CustomModal /> */}
+        <InfiniteScroll />
       </div>
     </div>
   );
