@@ -5,6 +5,7 @@ import CustomModal from "./components/Custom-modal";
 import TicTacToe from "./components/Tic Tac Toe";
 import GridLight from "./components/Grid-Light";
 import InfiniteScroll from "./components/InfiniteScroll";
+import Slider from "./components/Slider";
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
         {/* <AutoCompleteTypeHead /> */}
         {/* <GridLight /> */}
         {/* <CustomModal /> */}
-        <InfiniteScroll />
+        {/* <InfiniteScroll /> */}
+        <Slider />
       </div>
     </div>
   );
