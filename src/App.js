@@ -6,6 +6,7 @@ import TicTacToe from "./components/Tic Tac Toe";
 import GridLight from "./components/Grid-Light";
 import InfiniteScroll from "./components/InfiniteScroll";
 import Slider from "./components/Slider";
+import Pagination from "./components/Pagination";
 
 function App() {
   return (
@@ -17,7 +18,8 @@ function App() {
         {/* <GridLight /> */}
         {/* <CustomModal /> */}
         {/* <InfiniteScroll /> */}
-        <Slider />
+        {/* <Slider /> */}
+        <Pagination />
       </div>
     </div>
   );
