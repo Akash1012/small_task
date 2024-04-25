@@ -7,6 +7,7 @@ import GridLight from "./components/Grid-Light";
 import InfiniteScroll from "./components/InfiniteScroll";
 import Slider from "./components/Slider";
 import Pagination from "./components/Pagination";
+import Tic from "./components/PR/pr";
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
         {/* <CustomModal /> */}
         {/* <InfiniteScroll /> */}
         {/* <Slider /> */}
-        <Pagination />
+        {/* <Pagination /> */}
+        <Tic />
       </div>
     </div>
   );

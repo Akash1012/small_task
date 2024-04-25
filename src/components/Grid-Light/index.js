@@ -31,7 +31,6 @@ function GridLight() {
           clearInterval(timer);
           setIsDeactivating(false);
         }
-
         return newOrder;
       });
     }, 300);

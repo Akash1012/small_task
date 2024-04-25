@@ -24,8 +24,6 @@ const InfiniteScroll = () => {
     if (Infinite.current) {
       const { clientHeight, scrollTop, scrollHeight } = Infinite.current;
 
-      console.log(clientHeight + scrollTop, scrollHeight);
-
       if (clientHeight + scrollTop + 1 >= scrollHeight) {
         if (page < totalPage) {
           setPage((prevPage) => prevPage + 1);
