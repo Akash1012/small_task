@@ -8,6 +8,7 @@ import InfiniteScroll from "./components/InfiniteScroll";
 import Slider from "./components/Slider";
 import Pagination from "./components/Pagination";
 import Tic from "./components/PR/pr";
+import PasswordManager from "./components/PasswordGenerator";
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
         {/* <InfiniteScroll /> */}
         {/* <Slider /> */}
         {/* <Pagination /> */}
-        <Tic />
+        {/* <Tic /> */}
+        <PasswordManager />
       </div>
     </div>
   );
