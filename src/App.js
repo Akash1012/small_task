@@ -9,6 +9,7 @@ import Slider from "./components/Slider";
 import Pagination from "./components/Pagination";
 import Tic from "./components/PR/pr";
 import PasswordManager from "./components/PasswordGenerator";
+import MainBar from "./components/Progress Bar";
 
 function App() {
   return (
@@ -23,7 +24,8 @@ function App() {
         {/* <Slider /> */}
         {/* <Pagination /> */}
         {/* <Tic /> */}
-        <PasswordManager />
+        {/* <PasswordManager /> */}
+        <MainBar />
       </div>
     </div>
   );
