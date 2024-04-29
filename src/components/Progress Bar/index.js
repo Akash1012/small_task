@@ -10,6 +10,10 @@ const MainBar = () => {
     setInterval(() => {
       setValue((val) => val + 1);
     }, 100);
+
+    return () => {
+      clearInterval();
+    };
   }, []);
 
   return (

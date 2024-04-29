@@ -7,7 +7,6 @@ import GridLight from "./components/Grid-Light";
 import InfiniteScroll from "./components/InfiniteScroll";
 import Slider from "./components/Slider";
 import Pagination from "./components/Pagination";
-import Tic from "./components/PR/pr";
 import PasswordManager from "./components/PasswordGenerator";
 import MainBar from "./components/Progress Bar";
 import MainStepper from "./components/Stepper";
@@ -24,10 +23,9 @@ function App() {
         {/* <InfiniteScroll /> */}
         {/* <Slider /> */}
         {/* <Pagination /> */}
-        {/* <Tic /> */}
         {/* <PasswordManager /> */}
         {/* <MainBar /> */}
-        <MainStepper />
+        {/* <MainStepper /> */}
       </div>
     </div>
   );

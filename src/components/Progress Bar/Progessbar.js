@@ -6,7 +6,10 @@ const ProgessBar = ({ value = 0, onComplete = () => {} }) => {
   const [percent, setPercent] = useState(value);
 
   useEffect(() => {
-    setPercent(Math.min(MAX, Math.max(value, MIN)));
+    // setPercent(Math.min(MAX, Math.max(value, MIN)));
+    if (percent !== MAX) {
+      setPercent(value);
+    }
     if (value >= MAX) {
       onComplete();
     }
