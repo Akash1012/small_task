@@ -24,7 +24,7 @@ function App() {
         {/* <Slider /> */}
         {/* <Pagination /> */}
         {/* <PasswordManager /> */}
-        {/* <MainBar /> */}
+        <MainBar />
         {/* <MainStepper /> */}
       </div>
     </div>
