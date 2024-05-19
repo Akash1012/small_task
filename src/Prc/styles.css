@@ -1,0 +1,28 @@
+.heading {
+  text-align: center;
+}
+.bb {
+  display: flex;
+  flex-direction: column;
+  margin: 10px auto;
+  border: 1px solid;
+  width: 200px;
+  height: 200px;
+  border-bottom: null;
+  border-right: null;
+}
+
+.rr {
+  display: flex;
+  flex: 33%;
+  border-bottom: 1px solid;
+}
+
+.cc {
+  display: flex;
+  flex: 33%;
+  border-right: 1px solid;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}

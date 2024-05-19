@@ -7,25 +7,9 @@ const TicTacToe = () => {
 
   console.log(nextPlayer);
 
-  const squareSelected = (selectedItem) => {
-    const temp = [...data];
-    temp[selectedItem] = nextPlayer;
-    setData(temp);
-  };
-
   const squareData = (item) => {
     return (
-      <div
-        className="column"
-        onClick={() => {
-          if (["X", "O"].includes(winner)) {
-            return;
-          }
-          if (!data[item]) {
-            squareSelected(item);
-          }
-        }}
-      >
+      <div className="column" onClick={() => squareSelected(item)}>
         <div>{data[item]}</div>
       </div>
     );
@@ -61,6 +45,14 @@ const TicTacToe = () => {
 
   const status = () => {
     return winner ? `Winner is ${winner}` : `Next Player is ${nextPlayer}`;
+  };
+
+  const squareSelected = (selectedItem) => {
+    if (!winner && !data[selectedItem]) {
+      const temp = [...data];
+      temp[selectedItem] = nextPlayer;
+      setData(temp);
+    }
   };
   return (
     <div className="main_container">

@@ -10,6 +10,9 @@ import Pagination from "./components/Pagination";
 import PasswordManager from "./components/PasswordGenerator";
 import MainBar from "./components/Progress Bar";
 import MainStepper from "./components/Stepper";
+import Tic from "./Prc";
+import ListInterview from "./components/Deloitte_List";
+import DD from "./components/DD";
 
 function App() {
   return (
@@ -24,8 +27,13 @@ function App() {
         {/* <Slider /> */}
         {/* <Pagination /> */}
         {/* <PasswordManager /> */}
-        <MainBar />
+        {/* <MainBar /> */}
         {/* <MainStepper /> */}
+        {/* <ListInterview /> */}
+        <DD />
+
+        {/* Prct */}
+        {/* <Tic /> */}
       </div>
     </div>
   );

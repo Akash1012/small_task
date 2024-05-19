@@ -1,0 +1,15 @@
+.mainHeader {
+  text-align: center;
+}
+input {
+  margin: 50px;
+}
+table {
+  margin: auto;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+}

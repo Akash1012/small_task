@@ -30,7 +30,7 @@ function AutoCompleteTypeHead() {
   };
 
   useEffect(() => {
-    getTheData();
+    // getTheData();
   }, []);
 
   const handleClick = (title) => {
@@ -45,7 +45,7 @@ function AutoCompleteTypeHead() {
       if (timer) {
         clearTimeout(timer);
       }
-      setValue(args[0].target.value);
+      // setValue(args[0].target.value);
       timer = setTimeout(() => {
         fn(...args);
       }, 1000);
@@ -53,7 +53,7 @@ function AutoCompleteTypeHead() {
   }
 
   function handleInputChange(event) {
-    getTheData(event.target.value);
+    getTheData(event);
   }
 
   const optimisedCall = useCallback(inputDebounce(handleInputChange), []);
@@ -96,6 +96,11 @@ function AutoCompleteTypeHead() {
     }
   };
 
+  function handleChange(event) {
+    setValue(event.target.value);
+    optimisedCall(event.target.value);
+  }
+
   return (
     <>
       <h3 className="header">Auto Complete Type Head</h3>
@@ -103,7 +108,7 @@ function AutoCompleteTypeHead() {
         <input
           value={value}
           type="text"
-          onChange={(e) => optimisedCall(e)}
+          onChange={(e) => handleChange(e)}
           placeholder="Type to Search"
           onFocus={() => setShow(true)}
           onKeyUp={handleKeyUp}
