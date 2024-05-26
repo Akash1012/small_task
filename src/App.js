@@ -13,6 +13,8 @@ import MainStepper from "./components/Stepper";
 import Tic from "./Prc";
 import ListInterview from "./components/Deloitte_List";
 import DD from "./components/DD";
+import Toast from "./components/ToastComp";
+import DragAndDrop from "./components/DragAndDrop";
 
 function App() {
   return (
@@ -30,10 +32,12 @@ function App() {
         {/* <MainBar /> */}
         {/* <MainStepper /> */}
         {/* <ListInterview /> */}
-        <DD />
+        {/* <DD /> */}
 
         {/* Prct */}
         {/* <Tic /> */}
+        {/* <Toast /> */}
+        <DragAndDrop />
       </div>
     </div>
   );
