@@ -7,7 +7,8 @@ import Note from "../Note";
 const Notes = ({ notes = [], setNotes = () => {} }) => {
   useEffect(() => {
     // localstorage logic
-    const savedNotes = JSON.parse(localStorage.getItem("notes")) || [];
+    // const savedNotes = JSON.parse(localStorage.getItem("notes")) || [];
+    const savedNotes = [];
 
     const updatedNotes = notes.map((note) => {
       const savedNote = savedNotes.find((n) => n.id === note.id);
@@ -114,7 +115,7 @@ const Notes = ({ notes = [], setNotes = () => {} }) => {
             }
             initialPos={note.position}
             content={note.text}
-            onMouseDown={(e) => handleDragStart(note, e)}
+            // onMouseDown={(e) => handleDragStart(note, e)}
           />
         );
       })}

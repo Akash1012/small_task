@@ -15,6 +15,7 @@ import ListInterview from "./components/Deloitte_List";
 import DD from "./components/DD";
 import Toast from "./components/ToastComp";
 import DragAndDrop from "./components/DragAndDrop";
+import QuizApp from "./components/QuizApp";
 
 function App() {
   return (
@@ -37,7 +38,8 @@ function App() {
         {/* Prct */}
         {/* <Tic /> */}
         {/* <Toast /> */}
-        <DragAndDrop />
+        {/* <DragAndDrop /> */}
+        <QuizApp />
       </div>
     </div>
   );
