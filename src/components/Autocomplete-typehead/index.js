@@ -30,7 +30,7 @@ function AutoCompleteTypeHead() {
   };
 
   useEffect(() => {
-    // getTheData();
+    getTheData();
   }, []);
 
   const handleClick = (title) => {
@@ -55,8 +55,6 @@ function AutoCompleteTypeHead() {
   function handleInputChange(event) {
     getTheData(event);
   }
-
-  const optimisedCall = useCallback(inputDebounce(handleInputChange), []);
 
   const handleKeyUp = (event) => {
     const keyCode = event.keyCode;
@@ -95,6 +93,8 @@ function AutoCompleteTypeHead() {
       });
     }
   };
+
+  const optimisedCall = useCallback(inputDebounce(handleInputChange), []);
 
   function handleChange(event) {
     setValue(event.target.value);

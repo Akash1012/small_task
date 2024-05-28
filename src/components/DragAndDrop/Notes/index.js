@@ -7,8 +7,8 @@ import Note from "../Note";
 const Notes = ({ notes = [], setNotes = () => {} }) => {
   useEffect(() => {
     // localstorage logic
-    // const savedNotes = JSON.parse(localStorage.getItem("notes")) || [];
-    const savedNotes = [];
+    const savedNotes = JSON.parse(localStorage.getItem("notes")) || [];
+    // const savedNotes = [];
 
     const updatedNotes = notes.map((note) => {
       const savedNote = savedNotes.find((n) => n.id === note.id);
@@ -39,13 +39,14 @@ const Notes = ({ notes = [], setNotes = () => {} }) => {
   const handleDragStart = (note, e) => {
     const { id } = note;
     const noteRef = noteRefs.current[id].current;
-    const rect = noteRef.getBoundingClientRect();
+    const rect = noteRef.getBoundingClientRect(); // it give dimension on the box
     const offsetX = e.clientX - rect.left;
     const offsetY = e.clientY - rect.top;
 
     const startPos = note.position;
 
     const handleMouseMove = (e) => {
+      // when we drag a note
       const newX = e.clientX - offsetX;
       const newY = e.clientY - offsetY;
 
@@ -54,6 +55,7 @@ const Notes = ({ notes = [], setNotes = () => {} }) => {
     };
 
     const handleMouseUp = () => {
+      // when we leave a note
       document.removeEventListener("mousemove", handleMouseMove);
       document.removeEventListener("mouseup", handleMouseUp);
 
@@ -115,7 +117,7 @@ const Notes = ({ notes = [], setNotes = () => {} }) => {
             }
             initialPos={note.position}
             content={note.text}
-            // onMouseDown={(e) => handleDragStart(note, e)}
+            onMouseDown={(e) => handleDragStart(note, e)}
           />
         );
       })}

@@ -38,8 +38,8 @@ function App() {
         {/* Prct */}
         {/* <Tic /> */}
         {/* <Toast /> */}
-        {/* <DragAndDrop /> */}
-        <QuizApp />
+        <DragAndDrop />
+        {/* <QuizApp /> */}
       </div>
     </div>
   );
