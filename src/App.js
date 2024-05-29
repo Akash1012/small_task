@@ -16,6 +16,7 @@ import DD from "./components/DD";
 import Toast from "./components/ToastComp";
 import DragAndDrop from "./components/DragAndDrop";
 import QuizApp from "./components/QuizApp";
+import FileExp from "./components/file-explorer";
 
 function App() {
   return (
@@ -38,8 +39,9 @@ function App() {
         {/* Prct */}
         {/* <Tic /> */}
         {/* <Toast /> */}
-        <DragAndDrop />
+        {/* <DragAndDrop /> */}
         {/* <QuizApp /> */}
+        <FileExp />
       </div>
     </div>
   );
