@@ -1,14 +1,11 @@
 import "./App.css";
-import TrafficService from "./components/PR";
-import Traffic from "./components/TrafficLight";
+import MultiSelect from "./components/MultiSelect";
 
 function App() {
   return (
     <div>
       <div>Hello</div>
-      <Traffic />
-      <hr />
-      <TrafficService />
+      <MultiSelect />
     </div>
   );
 }
