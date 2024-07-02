@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import "./styles.css";
 import Pill from "./Pill";
 
@@ -10,19 +10,34 @@ const MultiSelect = () => {
 
   const inputRef = useRef(null);
 
+  const fetchUsers = (value = "") => {
+    // searchTerm?.trim() === "";
+
+    if (value?.trim() === "") {
+      setsuggestions([]);
+      return;
+    }
+    // fetch(`https://dummyjson.com/users/search?q=${searchTerm}`)
+    fetch(`https://dummyjson.com/users/search?q=${value}`)
+      .then((res) => res.json())
+      .then((data) => setsuggestions(data))
+      .catch((err) => console.log(err));
+  };
+
   useEffect(() => {
-    const fetchUsers = () => {
-      if (searchTerm.trim() === "") {
-        setsuggestions([]);
-        return;
-      }
-      fetch(`https://dummyjson.com/users/search?q=${searchTerm}`)
-        .then((res) => res.json())
-        .then((data) => setsuggestions(data))
-        .catch((err) => console.log(err));
-    };
+    // const fetchUsers = () => {
+    //   if (searchTerm.trim() === "") {
+    //     setsuggestions([]);
+    //     return;
+    //   }
+    //   fetch(`https://dummyjson.com/users/search?q=${searchTerm}`)
+    //     .then((res) => res.json())
+    //     .then((data) => setsuggestions(data))
+    //     .catch((err) => console.log(err));
+    // };
+    // [searchTerm]
     fetchUsers();
-  }, [searchTerm]);
+  }, []);
 
   const handleSelectUser = (user) => {
     setSelectedUser([...selectedUser, user]);
@@ -50,6 +65,29 @@ const MultiSelect = () => {
     }
   };
 
+  function debounce(fn) {
+    let timer;
+    return function (...args) {
+      if (timer) {
+        clearTimeout(timer);
+      }
+      timer = setTimeout(() => {
+        fn(...args);
+      }, 1000);
+    };
+  }
+
+  function handleInputChange(v) {
+    fetchUsers(v);
+  }
+
+  const optimizeSearchCall = useCallback(debounce(handleInputChange), []);
+
+  const handleChange = (e) => {
+    setSearchTerm(e.target.value);
+    optimizeSearchCall(e.target.value);
+  };
+
   return (
     <div className="user-search-container">
       <div className="user-search-input">
@@ -72,7 +110,7 @@ const MultiSelect = () => {
             ref={inputRef}
             type="text"
             value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
+            onChange={(e) => handleChange(e)}
             placeholder="search for users..."
             onKeyDown={handleKeyDown}
           />
