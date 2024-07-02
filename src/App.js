@@ -1,4 +1,5 @@
 import "./App.css";
+import TrafficService from "./components/PR";
 import Traffic from "./components/TrafficLight";
 
 function App() {
@@ -6,6 +7,8 @@ function App() {
     <div>
       <div>Hello</div>
       <Traffic />
+      <hr />
+      <TrafficService />
     </div>
   );
 }
