@@ -71,3 +71,66 @@
 .suggestion-list li img {
   height: 20px;
 }
+
+/* ----------------------------------------------------------------------------------------------------- */
+
+/* .user-search-container {
+  display: flex;
+  position: relative;
+}
+
+.user-search-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  flex-wrap: wrap;
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid;
+}
+
+.multi-select {
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: black;
+  color: wheat;
+  border-radius: 16px;
+}
+
+.user-search-input input {
+  border: none;
+  padding: 5px;
+  height: 20px;
+}
+
+.user-search-input input:focus {
+  outline: none;
+}
+
+.suggestion-list {
+  list-style-type: none;
+  max-height: 300px;
+  overflow-y: scroll;
+  /* border: 1px solid; */
+/* position: absolute;
+  padding: 0px;
+  margin-top: 7px;
+}
+
+.suggestion-list li {
+  padding: 8px 8px;
+  border-bottom: 1px solid;
+  cursor: pointer;
+}
+
+.suggestion-list li:last-child {
+  border-bottom: none;
+}
+
+.suggestion-list > .active,
+.suggestion-list li:hover {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+}  */
