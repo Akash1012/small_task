@@ -1,10 +1,11 @@
 import "./App.css";
-import MultiSelect from "./components/MultiSelect";
+// import MultiSelect from "./components/MultiSelect";
+import TripDashBoard from "./components/Task";
 
 function App() {
   return (
     <div>
-      <MultiSelect />
+      <TripDashBoard />
     </div>
   );
 }
