@@ -5,6 +5,8 @@ import "./styles.css";
 const ProgessBar = ({ value = 0, onComplete = () => {} }) => {
   const [percent, setPercent] = useState(value);
 
+  console.log(value);
+
   useEffect(() => {
     // setPercent(Math.min(MAX, Math.max(value, MIN)));
     if (percent !== MAX) {
@@ -25,9 +27,6 @@ const ProgessBar = ({ value = 0, onComplete = () => {} }) => {
         {percent.toFixed()}%
       </span>
       <div
-        // style={{
-        //   width: `${percent}%`,
-        // }}
         style={{
           transform: `scaleX(${percent / MAX})`,
           transformOrigin: "left",

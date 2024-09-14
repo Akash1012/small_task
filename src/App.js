@@ -1,11 +1,17 @@
 import "./App.css";
-// import MultiSelect from "./components/MultiSelect";
-import TripDashBoard from "./components/Task";
+import GridLight from "./components/Grid-Light";
+import SearchUsers from "./components/Hoc/user";
+import Td from "./components/Hoc/todos";
+import Pagination from "./components/Pagination";
+import PasswordManager from "./components/PasswordGenerator";
+import Toast from "./components/ToastComp";
 
 function App() {
   return (
     <div>
-      <TripDashBoard />
+      {/* <PasswordManager /> */}
+      <SearchUsers />
+      <Td />
     </div>
   );
 }

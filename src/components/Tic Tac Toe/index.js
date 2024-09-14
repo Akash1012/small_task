@@ -58,12 +58,7 @@ const TicTacToe = () => {
     <div className="main_container">
       <div>{status()}</div>
       <div className="board">
-        <div
-          className="row"
-          style={{
-            background: "red",
-          }}
-        >
+        <div className="row">
           {squareData(0)}
           {squareData(1)}
           {squareData(2)}

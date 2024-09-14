@@ -21,13 +21,13 @@ const icons = {
 const Notifications = ({ type = "info", message, onClose = () => {} }) => {
   return (
     <div className={`notification ${type}`}>
-      {icons[type]}
+      {/* {icons[type]} */}
       {message}
-      <AiOutlineCloseCircle
+      {/* <AiOutlineCloseCircle
         className="closeBtn"
         color="white"
         onClick={() => onClose()}
-      />
+      /> */}
     </div>
   );
 };

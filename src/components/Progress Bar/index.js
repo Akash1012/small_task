@@ -7,14 +7,16 @@ const MainBar = () => {
   const [success, setSuccess] = useState(false);
 
   useEffect(() => {
-    setInterval(() => {
-      setValue((val) => val + 1);
+    const intervalId = setInterval(() => {
+      if (value <= 100) {
+        setValue((val) => val + 1);
+      }
     }, 100);
 
     return () => {
-      clearInterval();
+      clearInterval(intervalId);
     };
-  }, []);
+  }, [value]);
 
   return (
     <div className="mainbar">

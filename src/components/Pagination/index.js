@@ -15,7 +15,12 @@ const Pagination = () => {
 
       const data = await response.json();
       setProducts(data.products);
-      setTotal(data.total / 10);
+
+      // setTotal(data.total / 10);
+      let total = Math.round(data.total / 10);
+      setTotal(total);
+
+      console.log("totoa", total);
     };
     fetchData();
   }, [page]);
