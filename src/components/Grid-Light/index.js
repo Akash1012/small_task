@@ -24,7 +24,7 @@ function GridLight() {
     setIsDeactivating(true);
     const timer = setInterval(() => {
       setOrder((orginalOrder) => {
-        const newOrder = orginalOrder.slice();
+        const newOrder = orginalOrder.slice(); // copy the order array
         newOrder.pop();
 
         if (newOrder.length === 0) {

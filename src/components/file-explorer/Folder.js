@@ -30,10 +30,10 @@ function Folder({ handleInsertNode = () => {}, explorer }) {
         <div onClick={() => setExpand(!expand)} className="folder">
           <span>📁 {explorer.name}</span>
 
-          <div>
+          {/* <div>
             <button onClick={(e) => handleNewFolder(e, true)}>Folder +</button>
             <button onClick={(e) => handleNewFolder(e, false)}>File +</button>
-          </div>
+          </div> */}
         </div>
 
         <div style={{ display: expand ? "block" : "none", paddingLeft: 25 }}>

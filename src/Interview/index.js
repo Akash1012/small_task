@@ -1,105 +1,64 @@
-import { useState, useEffect } from "react";
-import "./styles.css";
+/* // Create a React application that consumes the following 
+API: 
+https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=5&page=1&sparkline=false. 
+The program should display a list of the top 5 cryptocurrencies on a dashboard, 
+showing their name, symbol, and current price. When a user clicks on a cryptocurrency's name, 
+a details page should open, providing additional information such as market cap, 24-hour volume, 
+and price change percentage. The data should be managed using component state, ensuring
+ that the API is only called once to fetch the data when the component is first mounted, 
+and the fetched data is used across the application without re-fetching. */
 
-const Tic = () => {
-  const [data, setData] = useState(Array(9).fill(null));
-  const [gameOver, setGameOver] = useState(false);
-  let nextPlayer = data.filter(Boolean).length % 2 === 0 ? "X" : "O";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
+const Currency = () => {
+  const [currency, setCurrency] = useState([]);
+  let navigate = useNavigate();
 
   useEffect(() => {
-    if (data.filter(Boolean).length === data.length) {
-      if (!checkWinner) {
-        setGameOver(true);
-      }
+    const getThedata = () => {
+      fetch(
+        "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=5&page=1&sparkline=false"
+      )
+        .then((response) => response.json())
+        .then((data) => setCurrency(data));
+    };
+    if (!currency.length) {
+      getThedata();
     }
-  }, [data]);
+  }, []);
 
-  const calculateWinner = () => {
-    let prob = [
-      [0, 1, 2],
-      [3, 4, 5],
-      [6, 7, 8],
-      [0, 3, 6],
-      [1, 4, 7],
-      [2, 5, 8],
-      [0, 4, 8],
-      [2, 4, 6],
-    ];
-
-    for (let item of prob) {
-      let [x, y, z] = item;
-
-      if (data[x] === data[y] && data[y] === data[z]) {
-        return data[x];
-      }
-    }
-    return null;
-  };
-
-  const checkWinner = calculateWinner();
-
-  const status = () => {
-    return checkWinner
-      ? `Winner is : ${checkWinner}`
-      : `${
-          gameOver
-            ? "Game Over, Please Reset Your Game"
-            : `Next Player is : ${nextPlayer}`
-        }`;
-  };
-  const box = (item) => {
-    return (
-      <div
-        className="cc"
-        onClick={() => addElementToBox(item)}
-        style={{
-          background:
-            data[item] === "X" ? "red" : data[item] === "O" ? "blue" : "white",
-        }}
-      >
-        {data[item]}
-      </div>
-    );
-  };
-
-  const addElementToBox = (item) => {
-    if (!checkWinner && !data[item]) {
-      let temp = [...data];
-      temp[item] = nextPlayer;
-      setData(temp);
-    }
-  };
-
-  const resetGame = () => {
-    setData(Array(9).fill(null));
+  const showDetails = (cr) => {
+    navigate("/details", { state: { details: cr } });
   };
 
   return (
-    <div>
-      <div className="heading">
-        <h1>TIC TAC</h1>
-        <p>{status()}</p>
-        <button onClick={() => resetGame()}>Reset Game</button>
-      </div>
-      <div className="bb">
-        <div className="rr">
-          {box(0)}
-          {box(1)}
-          {box(2)}
-        </div>
-        <div className="rr">
-          {box(3)}
-          {box(4)}
-          {box(5)}
-        </div>
-        <div className="rr">
-          {box(6)}
-          {box(7)}
-          {box(8)}
-        </div>
-      </div>
+    <div
+      className="main_container"
+      style={{
+        padding: "10px",
+        margin: "10px",
+      }}
+    >
+      {currency.map((cr) => {
+        const { name, symbol, current_price, id } = cr;
+        return (
+          <div
+            key={id}
+            className="currency_card"
+            style={{
+              border: "2px solid",
+              padding: "10px",
+            }}
+          >
+            <p onClick={() => showDetails(cr)}>Name: {name}</p>
+            <p>Symbol: {symbol}</p>
+            <p>Price: {current_price}</p>
+          </div>
+        );
+      })}
     </div>
   );
 };
 
-export default Tic;
+export default Currency;

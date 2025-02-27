@@ -1,17 +1,28 @@
 import "./App.css";
-import GridLight from "./components/Grid-Light";
-import SearchUsers from "./components/Hoc/user";
-import Td from "./components/Hoc/todos";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Currency from "./Interview";
+import Details from "./Interview/details";
+import MemoryGame from "./components/Memory Game";
+import TimerInterview from "./Interview/XX";
+import Timer from "./Interview/XX";
+import WeatherDetails from "./components/NewInterview";
 import Pagination from "./components/Pagination";
-import PasswordManager from "./components/PasswordGenerator";
-import Toast from "./components/ToastComp";
 
 function App() {
   return (
     <div>
-      {/* <PasswordManager /> */}
-      <SearchUsers />
-      <Td />
+      <Pagination />
+      {/* <WeatherDetails /> */}
+      {/* <Timer startTimer={2} endTimer={10} /> */}
+      {/* <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Currency />} />
+          <Route path="/details" element={<Details />} />
+        </Routes>
+      </BrowserRouter> */}
+      {/* <MemoryGame /> */}
+
+      {/* <TimerInterview /> */}
     </div>
   );
 }

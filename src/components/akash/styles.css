@@ -1,0 +1,11 @@
+.show-seconds {
+  padding: 20px;
+  font-size: 50px;
+}
+
+.new_btn {
+  padding: 15px;
+  width: 100px;
+  font-weight: bold;
+  background-color: #555;
+}

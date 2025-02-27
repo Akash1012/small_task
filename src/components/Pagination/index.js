@@ -1,11 +1,15 @@
 import { useState, useEffect } from "react";
 import "./styles.css";
+import { render } from "@testing-library/react";
 
+const maxVisiblePages = 10;
 const Pagination = () => {
   const [products, setProducts] = useState([]);
   const [total, setTotal] = useState(0);
   const [page, setPage] = useState(1);
   const [cart, setCart] = useState([]);
+
+  const totalPages = Math.ceil(products.length / 10);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -102,6 +106,33 @@ const Pagination = () => {
     setTotalCartValue(totalValue);
   }, [cart]);
 
+  const renderPageKey = (currentPage, key) => {
+    return (
+      <>
+        <div
+          key={key}
+          onClick={() => nextPage(currentPage)}
+          className={page == currentPage ? "number page-select" : "number"}
+        >
+          <span>{currentPage}</span>
+        </div>
+      </>
+    );
+  };
+
+  const renderPageNumbers = () => {
+    const pageNumbers = [];
+
+    console.log("totalPages", totalPages, products);
+    if (totalPages <= maxVisiblePages) {
+      for (let i = 1; i <= totalPages; i++) {
+        pageNumbers.push(renderPageKey(i));
+      }
+    }
+
+    return pageNumbers;
+  };
+
   return (
     <>
       <div>
@@ -178,7 +209,9 @@ const Pagination = () => {
               LEFT
             </div>
           )}
-          {[...Array(total)].map((_, index) => {
+
+          {renderPageNumbers()}
+          {/* {[...Array(total)].map((_, index) => {
             const pageNumber = index + 1;
             return (
               <div
@@ -188,7 +221,7 @@ const Pagination = () => {
                 <span>{pageNumber}</span>
               </div>
             );
-          })}
+          })} */}
           {page !== total && (
             <div
               className="number"
