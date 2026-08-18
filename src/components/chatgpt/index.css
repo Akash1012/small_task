@@ -1,0 +1,26 @@
+:root {
+  --bg: #fff;
+  --bg-sidebar: #f7f7f7;
+
+  --border: #ddd;
+  --border-input: #ccc;
+
+  --text: #111;
+  --text-muted: #777;
+
+  --bubble-user: #eee;
+  --bubble-assistant: #f7f7f7;
+
+  --hover: #ececec;
+  --active: #e2e2e2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: var(--text);
+}

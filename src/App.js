@@ -7,11 +7,13 @@ import TimerInterview from "./Interview/XX";
 import Timer from "./Interview/XX";
 import WeatherDetails from "./components/NewInterview";
 import Pagination from "./components/Pagination";
+import ChatGpt from "./components/chatgpt/App";
 
 function App() {
   return (
     <div>
-      <Pagination />
+      <ChatGpt />
+      {/* <Pagination /> */}
       {/* <WeatherDetails /> */}
       {/* <Timer startTimer={2} endTimer={10} /> */}
       {/* <BrowserRouter>

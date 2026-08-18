@@ -1,0 +1,15 @@
+.message-container {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.message-list {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+
+.typing-indicator {
+  color: var(--text-muted);
+  padding: 10px;
+}
