@@ -8,13 +8,17 @@ import Timer from "./Interview/XX";
 import WeatherDetails from "./components/NewInterview";
 import Pagination from "./components/Pagination";
 import ChatGpt from "./components/chatgpt/App";
+import ReactionTimeGame from "./components/ReactionTimeGame";
+import AutoCompleteTypeHead from "./components/Autocomplete-typehead";
 
 function App() {
   return (
     <div>
-      <ChatGpt />
+      {/* <ReactionTimeGame />, */}
+      {/* <ChatGpt /> */}
       {/* <Pagination /> */}
       {/* <WeatherDetails /> */}
+      <AutoCompleteTypeHead />
       {/* <Timer startTimer={2} endTimer={10} /> */}
       {/* <BrowserRouter>
         <Routes>

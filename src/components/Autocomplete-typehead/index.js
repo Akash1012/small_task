@@ -26,7 +26,10 @@ function AutoCompleteTypeHead() {
   const getTheData = (search = "") => {
     fetch(`https://dummyjson.com/products/search?q=${search}`)
       .then((res) => res.json())
-      .then((items) => setData(items.products));
+      .then((items) => setData(items.products))
+      .catch((error) => {
+        console.log("error", error.message);
+      });
   };
 
   useEffect(() => {
@@ -116,7 +119,7 @@ function AutoCompleteTypeHead() {
 
         {show && (
           <ul ref={selectRef}>
-            {data.map((item, index) => {
+            {data?.map((item, index) => {
               return (
                 <li
                   className={index === activeIndex && "active"}

@@ -1,0 +1,32 @@
+.main_container {
+  min-height: 100vh;
+  padding: 30px;
+  text-align: center;
+}
+
+.board {
+  display: grid;
+  gap: 8px;
+  width: 500px;
+  max-width: 90vw;
+  margin: 30px auto;
+}
+
+.box {
+  aspect-ratio: 1;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.box.active {
+  background: #4caf50;
+  color: white;
+}
+
+.restart {
+  padding: 12px 30px;
+  border: none;
+  cursor: pointer;
+}
