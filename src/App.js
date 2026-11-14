@@ -7,29 +7,17 @@ import TimerInterview from "./Interview/XX";
 import Timer from "./Interview/XX";
 import WeatherDetails from "./components/NewInterview";
 import Pagination from "./components/Pagination";
-import ChatGpt from "./components/chatgpt/App";
 import ReactionTimeGame from "./components/ReactionTimeGame";
 import AutoCompleteTypeHead from "./components/Autocomplete-typehead";
 import Clock from "./components/Clock";
+import Accordion from "./components/Accordion";
+import Booking from "./components/CinemaHallBooking";
 
 function App() {
   return (
-    <div>
-      {/* <ReactionTimeGame />, */}
-      {/* <ChatGpt /> */}
-      {/* <Pagination /> */}
-      {/* <WeatherDetails /> */}
-      <Clock />
-      {/* <Timer startTimer={2} endTimer={10} /> */}
-      {/* <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Currency />} />
-          <Route path="/details" element={<Details />} />
-        </Routes>
-      </BrowserRouter> */}
+    <div className="App">
+      <h1>Interview</h1>
       <MemoryGame />
-
-      {/* <TimerInterview /> */}
     </div>
   );
 }
